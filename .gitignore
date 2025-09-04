@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Testing / coverage
+.pytest_cache/
+.coverage*
+htmlcov/
+.tox/
+.nox/
+
+# Type/checker caches
+.mypy_cache/
+.pytype/
+.ruff_cache/
+.cache/
+
+# IDE / OS
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+
+# Environment / secrets
+.env
+.env.*
+*.secrets*
+secrets.*
+
+# Generated artifacts
+reports/
+
+# Optional: local data not tracked in repo
+data/
+*.parquet
+*.feather
+
+# Config overrides (keep example YAMLs tracked)
+experiments/local/
+experiments/private/
