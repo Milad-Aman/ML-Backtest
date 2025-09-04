@@ -10,7 +10,7 @@ Conventions:
 - Inputs are aligned to the same index; returns are log returns per period.
 - Transaction costs are applied to absolute position changes in bps.
 """
-# src/execution/engine.py
+# ml_backtest/execution/engine.py
 import numpy as np
 import pandas as pd
 

@@ -28,13 +28,13 @@ with proper walk-forward validation, transaction cost modeling, and statistical 
 python -m pip install -r requirements.txt
 
 # Baseline SMA
-python -m src.main --config experiments/sma.yaml
+python -m ml_backtest.main --config configs/sma.yaml
 
 # Donchian
-python -m src.main --config experiments/donchian.yaml
+python -m ml_backtest.main --config configs/donchian.yaml
 
 # ML overlay (RandomForest)
-python -m src.main --config experiments/ml_rf.yaml
+python -m ml_backtest.main --config configs/ml_rf.yaml
 
 # (Optional) Run tests
 pytest -q

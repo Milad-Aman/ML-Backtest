@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from src.eval.metrics import sharpe, max_drawdown
+from ml_backtest.eval.metrics import sharpe, max_drawdown
 
 def test_sharpe_basic():
     r = pd.Series([0.01, -0.01, 0.02, 0.0])

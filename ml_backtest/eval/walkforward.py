@@ -10,13 +10,13 @@ This module implements a simple walkforward evaluation framework:
   out-of-sample (OOS) returns, positions, and equity.
 
 Strategies supported via `config["strategy"]["name"]`:
-- "sma": Simple moving average crossover (see `src/strategy/sma.py`).
-- "donchian": Donchian channel breakout (see `src/strategy/donchian.py`).
+- "sma": Simple moving average crossover (see `ml_backtest/strategy/sma.py`).
+- "donchian": Donchian channel breakout (see `ml_backtest/strategy/donchian.py`).
 - "ml_classifier": Supervised classifier over engineered features
-  (see `src/ml/pipelines.py` and `src/features/featureset.py`).
+  (see `ml_backtest/ml/pipelines.py` and `ml_backtest/features/featureset.py`).
 
 Execution parameters are read from `config["execution"]` and passed to
-`backtest_t1` (see `src/execution/engine.py`). The framework avoids lookahead by
+`backtest_t1` (see `ml_backtest/execution/engine.py`). The framework avoids lookahead by
 fitting models and generating signals using only data within each fold.
 """
 

@@ -27,5 +27,5 @@ venv/
 Thumbs.db
 
 # Local experiment overrides 
-experiments/local/
-experiments/private/
+configs/local/
+configs/private/

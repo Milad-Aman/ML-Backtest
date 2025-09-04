@@ -1,5 +1,5 @@
 import pandas as pd
-from src.strategy.sma import sma_crossover_signals
+from ml_backtest.strategy.sma import sma_crossover_signals
 
 def test_signal_is_t_only():
     idx = pd.date_range("2020-01-01", periods=100, freq="D")
