@@ -1,0 +1,30 @@
+seed: 42
+data:
+  source: yahoo
+  ticker: BTC-USD
+  start: "2018-01-01"
+  end:   "2025-08-31"
+  interval: "1d"
+strategy:
+  name: ml_classifier
+  params:
+    model: random_forest
+    prob_threshold: 0.55
+    features:
+      r_lags: [1,2,3,5]
+      vol_lookback: 20
+      rsi_period: 14
+      sma_fast: 20
+      sma_slow: 100
+      donchian_lb: 55
+execution:
+  fees_bps: 10
+  slippage_bps: 5
+  target_vol_annual: 0.15
+  vol_lookback: 30
+  max_leverage: 2.0
+walkforward:
+  min_train: 365
+  test_size: 120
+output:
+  tag: "ml_rf"

@@ -1,0 +1,56 @@
+{
+  "config": {
+    "seed": 42,
+    "data": {
+      "source": "yahoo",
+      "ticker": "BTC-USD",
+      "start": "2018-01-01",
+      "end": "2025-08-31",
+      "interval": "1d"
+    },
+    "strategy": {
+      "name": "sma",
+      "params": {
+        "fast_windows": [
+          10,
+          20
+        ],
+        "slow_windows": [
+          50,
+          100
+        ]
+      }
+    },
+    "execution": {
+      "fees_bps": 10,
+      "slippage_bps": 5,
+      "target_vol_annual": 0.15,
+      "vol_lookback": 30,
+      "max_leverage": 2.0
+    },
+    "walkforward": {
+      "min_train": 365,
+      "test_size": 120
+    },
+    "output": {
+      "tag": "sma_baseline"
+    }
+  },
+  "summary": {
+    "ann_return_log": 0.04532548112150305,
+    "sharpe": 0.3589331988852433,
+    "sortino": 0.4094437958312313,
+    "max_dd": -0.38359121866807666,
+    "calmar": 0.11816089346071139,
+    "profit_factor": 1.1070078133350338,
+    "hit_rate": 0.2520833333333333,
+    "exposure": 0.5058333333333334,
+    "turnover": 48.15524123356768,
+    "var_5": -0.010519315523865093,
+    "es_5": -0.017704555557426938
+  },
+  "mc_permutation_pvalue": 0.8981018981018981,
+  "runs_test_z": -14.457526449577667,
+  "runs_test_p": 0.0,
+  "artifact_dir": "reports/sma_baseline_20250831_232711"
+}
