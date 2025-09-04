@@ -28,7 +28,7 @@ from ..strategy.sma import sma_crossover_signals
 from ..strategy.donchian import donchian_signals
 from ..features.featureset import build_feature_matrix
 from ..ml.pipelines import build_model, fit_predict_proba
-from .metrics import summarize
+from .metrics import summarise
 
 def rolling_windows(index, min_train: int, test_size: int):
     """Generator for sequential train/test splits without overlap.
@@ -83,7 +83,7 @@ def walkforward_run(config, df: pd.DataFrame):  # could include (rng: np.random.
         df (pd.DataFrame): OHLCV price data indexed by datetime.
 
     Returns:
-        folds_df (pd.DataFrame): One row per fold with metrics from `summarize`,
+        folds_df (pd.DataFrame): One row per fold with metrics from `summarise`,
             augmented with `start` and `end` date strings for the test slice.
         oos_ret (pd.Series): Concatenated OOS net pnl (log returns) across folds.
         oos_pos (pd.Series): Concatenated OOS positions across folds.
@@ -138,7 +138,7 @@ def walkforward_run(config, df: pd.DataFrame):  # could include (rng: np.random.
                               max_leverage=exe["max_leverage"])
         # bt_train not needed for now -- could be used for in-sample metrics or checks
 
-        metrics = summarize(bt_test["pnl_net"], bt_test["pos"])
+        metrics = summarise(bt_test["pnl_net"], bt_test["pos"])
         metrics["start"] = str(test.index[0].date())
         metrics["end"] = str(test.index[-1].date())
         folds.append(metrics)

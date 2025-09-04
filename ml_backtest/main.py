@@ -17,7 +17,7 @@ from datetime import datetime
 from pathlib import Path
 from .data_loader import load_yahoo, load_csv, add_log_returns
 from .eval.walkforward import walkforward_run
-from .eval.metrics import summarize
+from .eval.metrics import summarise
 from .eval.mc_permutation import mc_permutation_pvalue
 from .eval.runs_test import runs_test
 from .plotting.plots import plot_equity_and_dd, plot_fold_metrics
@@ -80,7 +80,7 @@ def main():
     df = load_data(cfg)
 
     folds_df, oos_ret, oos_pos, oos_eq = walkforward_run(cfg, df, rng)
-    summary = summarize(oos_ret, oos_pos)
+    summary = summarise(oos_ret, oos_pos)
     pval = mc_permutation_pvalue(oos_ret, n_iter=1000, block=5, seed=seed)
     z_run, p_run = runs_test(oos_ret)
 

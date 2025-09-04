@@ -8,7 +8,7 @@ shuffled rather than individual observations.
 
 Key functions:
 - `block_permute`: Shuffle an array by blocks to retain within-block structure.
-- `mc_permutation_pvalue`: Compute a p-value that a randomized (block-permuted)
+- `mc_permutation_pvalue`: Compute a p-value that a randomised (block-permuted)
   return series achieves a Sharpe at least as large as the observed one.
 """
 

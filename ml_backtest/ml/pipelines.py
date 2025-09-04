@@ -2,7 +2,7 @@
 ML pipelines for classification-based strategies.
 
 Provides calibrated probability models:
-- `log_reg`: Standardized Logistic Regression wrapped with sigmoid calibration.
+- `log_reg`: Standardised Logistic Regression wrapped with sigmoid calibration.
 - `random_forest`: RandomForest with isotonic calibration.
 """
 

@@ -3,7 +3,7 @@ Utilities for loading and preparing market data.
 
 This module:
 - Loads price data from Yahoo Finance (`load_yahoo`) or a CSV file (`load_csv`).
-- Normalizes indices to timezone-aware UTC `DatetimeIndex` for consistency.
+- Normalises indices to timezone-aware UTC `DatetimeIndex` for consistency.
 - Adds log returns to a DataFrame (`add_log_returns`).
 
 Conventions:
@@ -24,7 +24,7 @@ def _to_utc_index(df: pd.DataFrame) -> pd.DataFrame:
 
     If the DataFrame does not already have a `DatetimeIndex`, this function will
     look for a `Date` column, parse it as timezone-aware UTC, and set it as the
-    index. Otherwise, the existing index is localized or converted to UTC. The
+    index. Otherwise, the existing index is localised or converted to UTC. The
     returned frame is sorted ascending by index.
 
     Args:

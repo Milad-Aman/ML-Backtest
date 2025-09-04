@@ -67,7 +67,7 @@ def backtest_t1(
 
     Workflow:
     - Coerce inputs to aligned Series on the same index.
-    - Annualize EWMA vol from `returns` and compute scaling to hit
+    - Annualise EWMA vol from `returns` and compute scaling to hit
       `target_vol_annual`, capped by `max_leverage`.
     - Position `pos = clip(sig * scale, ±max_leverage)`.
     - PnL is computed with 1-bar delay: `pnl = pos.shift(1) * returns`.
@@ -81,7 +81,7 @@ def backtest_t1(
         raw_signal: Target directional signal in [-1, 1].
         fees_bps: Fee in basis points per unit traded.
         slippage_bps: Slippage in basis points per unit traded.
-        target_vol_annual: Target annualized volatility.
+        target_vol_annual: Target annualised volatility.
         vol_lookback: EWMA span for daily vol estimate.
         max_leverage: Cap for absolute position and scaling.
 
@@ -95,7 +95,7 @@ def backtest_t1(
     prices = _as_series(prices, idx=idx)
     sig = _as_series(raw_signal, idx=idx).fillna(0.0)
 
-    # Vol targeting (annualized EWMA)
+    # Vol targeting (annualised EWMA)
     vol_d = ewma_vol(returns, span=vol_lookback) * np.sqrt(252.0)
     scale = (target_vol_annual / vol_d).clip(0, max_leverage).fillna(0.0)
     pos = (sig * scale).clip(-max_leverage, max_leverage)

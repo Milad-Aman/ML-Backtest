@@ -27,7 +27,7 @@ def build_feature_matrix(
     - `vol_{vol_lookback}`: rolling stdev of log returns.
     - `rsi_{rsi_period}`: RSI of price.
     - `dist_sma_*`: price-to-SMA distance for fast and slow windows.
-    - `donch_pos`: normalized position within Donchian channel.
+    - `donch_pos`: normalised position within Donchian channel.
 
     Args:
         df (pd.DataFrame): Input OHLCV with columns including `price_col`, High, Low.

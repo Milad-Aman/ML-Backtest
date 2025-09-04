@@ -2,20 +2,20 @@
 Common performance metrics for backtests.
 
 - Unless noted, functions expect period log returns. 
-- Annualization assumes 252 trading days by default.
+- Annualisation assumes 252 trading days by default.
 """
 
 import numpy as np
 import pandas as pd
 
 def sharpe(returns: pd.Series, ann_factor: int = 252) -> float:
-    """Annualized Sharpe ratio; 0 if stdev is zero."""
+    """Annualised Sharpe ratio; 0 if stdev is zero."""
     mu = returns.mean()
     sd = returns.std(ddof=0)
     return np.sqrt(ann_factor) * (mu / sd) if sd > 0 else 0.0
 
 def sortino(returns: pd.Series, ann_factor: int = 252) -> float:
-    """Annualized Sortino using downside stdev; 0 if no downside."""
+    """Annualised Sortino using downside stdev; 0 if no downside."""
     downside = returns[returns < 0]
     dd = downside.std(ddof=0)
     mu = returns.mean()
@@ -28,7 +28,7 @@ def max_drawdown(equity: pd.Series) -> float:
     return dd.min()
 
 def calmar(returns: pd.Series, equity: pd.Series) -> float:
-    """Calmar ratio = annualized return / |max drawdown|; 0 if no drawdown."""
+    """Calmar ratio = annualised return / |max drawdown|; 0 if no drawdown."""
     ann = returns.mean() * 252
     mdd = abs(max_drawdown(equity))
     return ann / mdd if mdd > 0 else 0.0
@@ -61,10 +61,10 @@ def var_es(returns: pd.Series, alpha: float = 0.05):
     es = returns[returns <= q].mean() if (returns <= q).any() else q
     return q, es
 
-def summarize(log_returns: pd.Series, positions: pd.Series) -> dict:
+def summarise(log_returns: pd.Series, positions: pd.Series) -> dict:
     """Compute a concise metrics dict from log returns and positions.
 
-    Builds an equity curve via `exp(cumsum)`, then computes annualized return,
+    Builds an equity curve via `exp(cumsum)`, then computes annualised return,
     Sharpe/Sortino, drawdown metrics, win/loss stats, exposure/turnover, and
     5% VaR/ES.
     """
